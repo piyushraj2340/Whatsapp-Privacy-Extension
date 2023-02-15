@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Privacy</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Whatsapp Privacy Extension</h2>
+        <div class="content">
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Enable Privacy : </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="enable">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content-blur-range">
+                <div class="content-label">
+                    <p>
+                        <strong>Slide To Change The Blur Value</strong><br />
+                        <em id="blur-message"><b>Recommended value is 5px</b></em><br />
+                        <i>Value: <span id="blur-value">5</span>px</i>
+                    </p>
+                </div>
+                <div class="content-range range-container">
+                    <input type="range" min="1" max="20" value="5" class="range" id="blur-range">
+                </div>
+            </div>
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Profile Picture: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="profile">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Sender Profile Info: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="sender-profile">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Chat List: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="chat-list">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Message: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="message">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Message Reaction: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="message-reaction">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <!-- <div class="content-privacy-list">
+                <div class="content-label">
+                    <h3>Filter Search Chat: </h3>
+                </div>
+                <div class="content-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="filter-chat-list">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>

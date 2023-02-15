@@ -1,0 +1,27 @@
+{
+    "name": "Whatsapp Privacy Lock",
+    "author": "codeRed",
+    "description": "blur your message, profile picture, chat list at public place where someone watching your screen.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": "popup/image/whatsappPrivacy.png"
+    },
+    "background": {
+        "service_worker": "bgRunning.js"
+    },
+    "icons": {
+        "16": "popup/image/whatsappPrivacy16.png",
+        "32": "popup/image/whatsappPrivacy32.png",
+        "48": "popup/image/whatsappPrivacy48.png",
+        "128": "popup/image/whatsappPrivacy128.png"
+    },
+    "permissions": ["activeTab","scripting","storage"],
+    "content_scripts": [
+        {
+            "matches": ["https://web.whatsapp.com/"],
+            "js": ["privacy.js"]
+        }
+    ]
+}
