@@ -85,7 +85,8 @@ const blurStyleCSS = (selector,value,blurSize) => {
         blurSize = 0;
     }
     let head = document.head || document.getElementsByTagName('head')[0];
-    let css = `${selector} {filter: blur(${blurSize}px);transition: 0.5s;}${selector}:hover {filter: blur(0px);}`;
+    // given higher priority css so that override the given effect 
+    let css = `${selector} {filter: blur(${blurSize}px) !important; transition: 0.5s !important; } ${selector}:hover {filter: blur(0px) !important;}`;
     let style = document.createElement('style');
     // style.innerText = css;
     head.appendChild(style);
@@ -105,12 +106,16 @@ function updateCSS() {
             blurPx = 0;
         }
 
-        blurStyleCSS('[data-testid="chatlist-header"] img',profileChecked,blurPx);
-        blurStyleCSS('[data-testid="conversation-header"]',senderProfileChecked,blurPx);
-        blurStyleCSS('[data-testid="cell-frame-container"]',chatListChecked,blurPx);
-        blurStyleCSS('[data-testid="msg-container"]',messageChecked,blurPx);
-        blurStyleCSS('[data-testid="reaction-bubble"]',messageReactionChecked,blurPx);
-        blurStyleCSS('[data-testid="reaction-bubble"]',messageReactionChecked,blurPx);
+        // target whatsapp selectors 
+        blurStyleCSS('[aria-label="profile photo"] img',profileChecked,blurPx); // personal profile picture blur 
+        blurStyleCSS('#main header',senderProfileChecked,blurPx); // sender profile info appear on the top of the conversation
+        blurStyleCSS('[aria-label="Group Info"] .copyable-area',senderProfileChecked,blurPx); // sender profile info appear on the right of the conversation after clicking the profile header
+        blurStyleCSS('[aria-label="Chat list"] [role="listitem"]',chatListChecked,blurPx); // chat list appear on the left side 
+        blurStyleCSS('[aria-label="Search results."] [role="listitem"]',chatListChecked,blurPx); // chat list after search on the left side
+        blurStyleCSS('.focusable-list-item',messageChecked,blurPx); // message content appear on the middle of the screen
+        blurStyleCSS('#main footer',messageChecked,blurPx); // message content appear on the bottom of the screen
+        blurStyleCSS('.focusable-list-item .emoji',messageReactionChecked,blurPx*5);
+        // blurStyleCSS('[data-testid="reaction-bubble"]',messageReactionChecked,blurPx);
     });
 }
 
