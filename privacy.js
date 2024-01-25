@@ -86,7 +86,7 @@ const blurStyleCSS = (selector,value,blurSize) => {
     }
     let head = document.head || document.getElementsByTagName('head')[0];
     // given higher priority css so that override the given effect 
-    let css = `${selector} {filter: blur(${blurSize}px) !important; transition: 0.5s !important; } ${selector}:hover {filter: blur(0px) !important;}`;
+    let css = `${selector} {filter: blur(${blurSize}px) !important; transition: filter 0.5s !important; } ${selector}:hover {filter: blur(0px) !important;}`;
     let style = document.createElement('style');
     // style.innerText = css;
     head.appendChild(style);
