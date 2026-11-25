@@ -107,10 +107,11 @@ function updateCSS() {
         }
 
         // target whatsapp selectors 
-        blurStyleCSS('[aria-label="profile photo"] img',profileChecked,blurPx); // personal profile picture blur 
+        blurStyleCSS('[aria-label="You"]',profileChecked,blurPx); // personal profile picture blur 
         blurStyleCSS('#main header',senderProfileChecked,blurPx); // sender profile info appear on the top of the conversation
-        blurStyleCSS('[aria-label="Group Info"] .copyable-area',senderProfileChecked,blurPx); // sender profile info appear on the right of the conversation after clicking the profile header
-        blurStyleCSS('[aria-label="Chat list"] [role="listitem"]',chatListChecked,blurPx); // chat list appear on the left side 
+        blurStyleCSS('[data-testid="drawer-right"]',senderProfileChecked,blurPx); // sender profile info appear on the right of the conversation after clicking the profile header 
+        blurStyleCSS('[data-testid="group-chat-profile-picture"]',senderProfileChecked,blurPx); // sender profile picture appering onto the group chats 
+        blurStyleCSS('[aria-label="Chat list"] [role="row"]',chatListChecked,blurPx); // chat list appear on the left side 
         blurStyleCSS('[aria-label="Search results."] [role="listitem"]',chatListChecked,blurPx); // chat list after search on the left side
         blurStyleCSS('.focusable-list-item',messageChecked,blurPx); // message content appear on the middle of the screen
         blurStyleCSS('#main footer',messageChecked,blurPx); // message content appear on the bottom of the screen
@@ -126,4 +127,3 @@ updateCSS();
 chrome.storage.onChanged.addListener(() => {
     updateCSS();
 })
-
